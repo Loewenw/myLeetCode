@@ -1,2 +1,2 @@
 # myLeetCode
-record my leetcode
+记录我的leetCode解题之路
