@@ -16,9 +16,9 @@ var preorderTraversal = function(root) {
    if(!root) {
     return []
    }
-   let relust = []
+   let result = []
    const callback = (val) => {
-      relust.push(val)
+      result.push(val)
    }
    const preorder = (node, cb) => {
       if(node){
@@ -28,7 +28,7 @@ var preorderTraversal = function(root) {
       }
    }
    preorder(root, callback)
-   return relust;
+   return result;
 };
 
 
@@ -41,9 +41,9 @@ var inorderTraversal = function(root) {
    if(!root) {
       return []
      }
-     let relust = []
+     let result = []
      const callback = (val) => {
-        relust.push(val)
+        result.push(val)
      }
      const inorder = (node, cb) => {
         if(node){
@@ -53,7 +53,7 @@ var inorderTraversal = function(root) {
         }
      }
      inorder(root, callback)
-     return relust;
+     return result;
 };
 
 /**
@@ -65,9 +65,9 @@ var postorderTraversal = function(root) {
    if(!root) {
       return []
      }
-     let relust = []
+     let result = []
      const callback = (val) => {
-        relust.push(val)
+        result.push(val)
      }
      const postorder = (node, cb) => {
         if(node){
@@ -77,7 +77,7 @@ var postorderTraversal = function(root) {
         }
      }
      postorder(root, callback)
-     return relust;
+     return result;
 };
 
 /**
@@ -89,12 +89,12 @@ var levelOrder = function(root) {
    if(!root) {
       return []
    }
-   let relust = []
+   let result = []
    const callback = (val, index) => {
-      if( !relust[index]) {
-         relust[index] = []
+      if( !result[index]) {
+         result[index] = []
       }
-      relust[index].push(val)
+      result[index].push(val)
    }
    const level = (node, cb, tier) => {
       if(node){
@@ -105,7 +105,7 @@ var levelOrder = function(root) {
       }
    }
    level(root, callback, 0)
-   return relust;
+   return result;
 };
 
 // levelOrder({val: 3, left: {val: 9}, right: {val:20, left: {val: 15}, right: {val: 7}}})
@@ -141,3 +141,23 @@ var maxDepth = function(root) {
 var isSymmetric = function(root) {
     
 };
+// function isTreeSymmetric(t) {
+//    if (!t){
+//        return true
+//    
+//    return isTreeEqual(t.left, t.right)
+// }
+
+// isTreeEqual = function(x, y) {
+//    if (!x && !y){
+//        return true
+//    }
+//    if (!x || !y){
+//        return false
+//    }
+//    if (x.value === y.value){
+//        return isTreeEqual(x.left, y.right) && isTreeEqual(x.right, y.left)
+//    } else {
+//        return false
+//    }
+// }
